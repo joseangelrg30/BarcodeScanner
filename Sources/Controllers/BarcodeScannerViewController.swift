@@ -37,11 +37,11 @@ open class BarcodeScannerViewController: UIViewController {
   // MARK: - Public properties
 
   /// Delegate to handle the captured code.
-  public weak var codeDelegate: BarcodeScannerCodeDelegate?
+  public weak var codeDelegate: BarcodeScannerCodeDelegate
   /// Delegate to report errors.
-  public weak var errorDelegate: BarcodeScannerErrorDelegate?
+  public weak var errorDelegate: BarcodeScannerErrorDelegate
   /// Delegate to dismiss barcode scanner when the close button has been pressed.
-  public weak var dismissalDelegate: BarcodeScannerDismissalDelegate?
+  public weak var dismissalDelegate: BarcodeScannerDismissalDelegate
 
   /// When the flag is set to `true` controller returns a captured code
   /// and waits for the next reset action.
