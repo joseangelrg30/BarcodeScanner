@@ -4,7 +4,7 @@ import AVFoundation
 // MARK: - Delegates
 
 /// Delegate to handle the captured code.
-public protocol BarcodeScannerCodeDelegate: class {
+@objc public protocol BarcodeScannerCodeDelegate: class {
   func scanner(
     _ controller: BarcodeScannerViewController,
     didCaptureCode code: String,
@@ -13,12 +13,12 @@ public protocol BarcodeScannerCodeDelegate: class {
 }
 
 /// Delegate to report errors.
-public protocol BarcodeScannerErrorDelegate: class {
+@objc public protocol BarcodeScannerErrorDelegate: class {
   func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error)
 }
 
 /// Delegate to dismiss barcode scanner when the close button has been pressed.
-public protocol BarcodeScannerDismissalDelegate: class {
+@objc public protocol BarcodeScannerDismissalDelegate: class {
   func scannerDidDismiss(_ controller: BarcodeScannerViewController)
 }
 
@@ -37,11 +37,11 @@ open class BarcodeScannerViewController: UIViewController {
   // MARK: - Public properties
 
   /// Delegate to handle the captured code.
-  public var codeDelegate: BarcodeScannerCodeDelegate
+  @objc public var codeDelegate: BarcodeScannerCodeDelegate
   /// Delegate to report errors.
-  public var errorDelegate: BarcodeScannerErrorDelegate
+  @objc public var errorDelegate: BarcodeScannerErrorDelegate
   /// Delegate to dismiss barcode scanner when the close button has been pressed.
-  public var dismissalDelegate: BarcodeScannerDismissalDelegate
+  @objc public var dismissalDelegate: BarcodeScannerDismissalDelegate
 
   /// When the flag is set to `true` controller returns a captured code
   /// and waits for the next reset action.
